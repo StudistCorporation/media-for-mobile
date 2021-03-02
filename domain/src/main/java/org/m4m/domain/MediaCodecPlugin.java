@@ -181,7 +181,7 @@ public abstract class MediaCodecPlugin extends Plugin {
             return null;
         }
         int inputBufferIndex = inputBufferIndexes.poll();
-        return new Frame(inputBuffers[inputBufferIndex], 0, 0, inputBufferIndex, 0, 0);
+        return new Frame(mediaCodec.getInputBuffer(inputBufferIndex), 0, 0, inputBufferIndex, 0, 0);
     }
 
     @Override

@@ -86,6 +86,11 @@ public abstract class MediaCodecDecoderPlugin implements IMediaCodec {
     }
 
     @Override
+    public ByteBuffer getInputBuffer(int index) {
+        return mediaCodec.getInputBuffer(index);
+    }
+
+    @Override
     public ByteBuffer getOutputBuffer(int index) {
         return mediaCodec.getOutputBuffer(index);
     }
