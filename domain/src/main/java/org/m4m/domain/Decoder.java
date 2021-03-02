@@ -75,7 +75,7 @@ abstract class Decoder extends MediaCodecPlugin implements IFrameAllocator, ITra
             frame.setFlags(info.flags);
             frame.setLength(info.size);
 
-            ByteBuffer fromByteBuffer = buffers[outputBufferIndex].duplicate();
+            ByteBuffer fromByteBuffer = mediaCodec.getOutputBuffer(outputBufferIndex).duplicate();
             fromByteBuffer.position(0);
 
             if (frame.getLength() >= 0) {
@@ -83,7 +83,7 @@ abstract class Decoder extends MediaCodecPlugin implements IFrameAllocator, ITra
             }
 
             frame.getByteBuffer().position(0);
-            frame.getByteBuffer().put(buffers[outputBufferIndex]);
+            frame.getByteBuffer().put(mediaCodec.getOutputBuffer(outputBufferIndex));
             mediaCodec.releaseOutputBuffer(outputBufferIndex, false);
             //log.info("releaseOutputBuffer " + outputBufferIndex);
         } else {

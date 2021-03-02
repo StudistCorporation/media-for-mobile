@@ -91,7 +91,7 @@ public abstract class MediaCodecPlugin extends Plugin {
             outputBufferInfo = outputBufferInfos.poll();
         }
 
-        ByteBuffer outputBuffer = mediaCodec.getOutputBuffers()[outputBufferIndex];
+        ByteBuffer outputBuffer = mediaCodec.getOutputBuffer(outputBufferIndex);
 
         Frame frame;
 

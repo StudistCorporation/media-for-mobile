@@ -148,6 +148,11 @@ public class MediaCodecEncoderPlugin implements IMediaCodec {
     }
 
     @Override
+    public ByteBuffer getOutputBuffer(int index) {
+        return mediaCodec.getOutputBuffer(index);
+    }
+
+    @Override
     public ByteBuffer[] getOutputBuffers() {
         if (outputBuffers == null) {
             outputBuffers = mediaCodec.getOutputBuffers();

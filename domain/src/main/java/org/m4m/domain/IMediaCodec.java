@@ -40,6 +40,8 @@ public interface IMediaCodec {
 
     ByteBuffer[] getOutputBuffers();
 
+    ByteBuffer getOutputBuffer(int index);
+
     void queueInputBuffer(int index, int offset, int size, long presentationTimeUs, int flags);
 
     int dequeueInputBuffer(long timeout);
